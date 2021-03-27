@@ -1,6 +1,5 @@
 #include "iostream"
 #include <sstream>
-#include <chrono>
 #include <algorithm>
 #include <iostream>
 #include <fstream>
@@ -17,12 +16,7 @@ std::string decimalToHex(u32 decimal)
 
 int main(void) 
 {
-    using std::chrono::high_resolution_clock;
-    using std::chrono::duration_cast;
-    using std::chrono::duration;
-    using std::chrono::milliseconds;
-    auto t1 = high_resolution_clock::now();
-    for (u32 seed=0x0;seed<0xFFFFFF;seed++)
+    for (u32 seed=0x0;seed<0xFFFFFFFF;seed++)
     {
         MT mt(seed);
         RNGList<u32, MT, 131072> rngList(mt);
@@ -66,8 +60,5 @@ int main(void)
             rngList.advanceState();
         }
     }
-    auto t2 = high_resolution_clock::now();
-    duration<double, std::milli> ms_double = t2 - t1;
-    std::cout << ((((ms_double.count()/1000))/60)/60) << "h\n";
     return 0;
 }
