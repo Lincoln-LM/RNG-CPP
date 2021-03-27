@@ -1,0 +1,5 @@
+#!/bin/bash 
+
+# Simple bash script to build and run
+make 2>&1 >/dev/null
+../ex/horde

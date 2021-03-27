@@ -24,7 +24,7 @@ int main(void)
 
     /* Getting number of milliseconds as a double. */
     auto t1 = high_resolution_clock::now();
-    for (int i=0;i<100000;i++)
+    for (int i=0;i<1000000;i++)
     {
         seed = mt.next();
         //std::cout << decimalToHex(seed) << std::endl;
